@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>budget_tracker_app module &mdash; Budget Tracker App 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="budget_tracker_project" href="modules.html" />
+    <link rel="prev" title="Budget Tracker App documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Budget Tracker App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">budget_tracker_app module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.add_expense"><code class="docutils literal notranslate"><span class="pre">add_expense()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.add_income"><code class="docutils literal notranslate"><span class="pre">add_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.budget_menu"><code class="docutils literal notranslate"><span class="pre">budget_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.budget_summary"><code class="docutils literal notranslate"><span class="pre">budget_summary()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.commit_and_close"><code class="docutils literal notranslate"><span class="pre">commit_and_close()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.create_connection"><code class="docutils literal notranslate"><span class="pre">create_connection()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.create_database"><code class="docutils literal notranslate"><span class="pre">create_database()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.delete_expense"><code class="docutils literal notranslate"><span class="pre">delete_expense()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.delete_financial_goal"><code class="docutils literal notranslate"><span class="pre">delete_financial_goal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.delete_income"><code class="docutils literal notranslate"><span class="pre">delete_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.expense_menu"><code class="docutils literal notranslate"><span class="pre">expense_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.financial_goals_menu"><code class="docutils literal notranslate"><span class="pre">financial_goals_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.get_amount"><code class="docutils literal notranslate"><span class="pre">get_amount()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.get_category"><code class="docutils literal notranslate"><span class="pre">get_category()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.get_date"><code class="docutils literal notranslate"><span class="pre">get_date()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.get_financial_goal"><code class="docutils literal notranslate"><span class="pre">get_financial_goal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.income_menu"><code class="docutils literal notranslate"><span class="pre">income_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.insert_expense"><code class="docutils literal notranslate"><span class="pre">insert_expense()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.insert_income"><code class="docutils literal notranslate"><span class="pre">insert_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.main_menu"><code class="docutils literal notranslate"><span class="pre">main_menu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.set_budget"><code class="docutils literal notranslate"><span class="pre">set_budget()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.set_financial_goal"><code class="docutils literal notranslate"><span class="pre">set_financial_goal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.total_expenses"><code class="docutils literal notranslate"><span class="pre">total_expenses()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.total_income"><code class="docutils literal notranslate"><span class="pre">total_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.update_expense"><code class="docutils literal notranslate"><span class="pre">update_expense()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.update_financial_goal"><code class="docutils literal notranslate"><span class="pre">update_financial_goal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.update_income"><code class="docutils literal notranslate"><span class="pre">update_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.validate_category_input"><code class="docutils literal notranslate"><span class="pre">validate_category_input()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.validate_financial_goal_input"><code class="docutils literal notranslate"><span class="pre">validate_financial_goal_input()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_budget"><code class="docutils literal notranslate"><span class="pre">view_budget()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_expenses"><code class="docutils literal notranslate"><span class="pre">view_expenses()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_expenses_by_category"><code class="docutils literal notranslate"><span class="pre">view_expenses_by_category()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_financial_goals"><code class="docutils literal notranslate"><span class="pre">view_financial_goals()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_income"><code class="docutils literal notranslate"><span class="pre">view_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#budget_tracker_app.view_income_by_category"><code class="docutils literal notranslate"><span class="pre">view_income_by_category()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">budget_tracker_project</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">budget_tracker_app module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.add_expense"><code class="docutils literal notranslate"><span class="pre">add_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.add_income"><code class="docutils literal notranslate"><span class="pre">add_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.budget_menu"><code class="docutils literal notranslate"><span class="pre">budget_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.budget_summary"><code class="docutils literal notranslate"><span class="pre">budget_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.commit_and_close"><code class="docutils literal notranslate"><span class="pre">commit_and_close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.create_connection"><code class="docutils literal notranslate"><span class="pre">create_connection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.create_database"><code class="docutils literal notranslate"><span class="pre">create_database()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.delete_expense"><code class="docutils literal notranslate"><span class="pre">delete_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.delete_financial_goal"><code class="docutils literal notranslate"><span class="pre">delete_financial_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.delete_income"><code class="docutils literal notranslate"><span class="pre">delete_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.expense_menu"><code class="docutils literal notranslate"><span class="pre">expense_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.financial_goals_menu"><code class="docutils literal notranslate"><span class="pre">financial_goals_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.get_amount"><code class="docutils literal notranslate"><span class="pre">get_amount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.get_category"><code class="docutils literal notranslate"><span class="pre">get_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.get_date"><code class="docutils literal notranslate"><span class="pre">get_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.get_financial_goal"><code class="docutils literal notranslate"><span class="pre">get_financial_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.income_menu"><code class="docutils literal notranslate"><span class="pre">income_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.insert_expense"><code class="docutils literal notranslate"><span class="pre">insert_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.insert_income"><code class="docutils literal notranslate"><span class="pre">insert_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.main_menu"><code class="docutils literal notranslate"><span class="pre">main_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.set_budget"><code class="docutils literal notranslate"><span class="pre">set_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.set_financial_goal"><code class="docutils literal notranslate"><span class="pre">set_financial_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.total_expenses"><code class="docutils literal notranslate"><span class="pre">total_expenses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.total_income"><code class="docutils literal notranslate"><span class="pre">total_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.update_expense"><code class="docutils literal notranslate"><span class="pre">update_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.update_financial_goal"><code class="docutils literal notranslate"><span class="pre">update_financial_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.update_income"><code class="docutils literal notranslate"><span class="pre">update_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.validate_category_input"><code class="docutils literal notranslate"><span class="pre">validate_category_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.validate_financial_goal_input"><code class="docutils literal notranslate"><span class="pre">validate_financial_goal_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_budget"><code class="docutils literal notranslate"><span class="pre">view_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_expenses"><code class="docutils literal notranslate"><span class="pre">view_expenses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_expenses_by_category"><code class="docutils literal notranslate"><span class="pre">view_expenses_by_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_financial_goals"><code class="docutils literal notranslate"><span class="pre">view_financial_goals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_income"><code class="docutils literal notranslate"><span class="pre">view_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#budget_tracker_app.view_income_by_category"><code class="docutils literal notranslate"><span class="pre">view_income_by_category()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Budget Tracker App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">budget_tracker_app module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/budget_tracker_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-budget_tracker_app">
+<span id="budget-tracker-app-module"></span><h1>budget_tracker_app module<a class="headerlink" href="#module-budget_tracker_app" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.add_expense">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">add_expense</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.add_expense" title="Link to this definition"></a></dt>
+<dd><p>Prompts the user for an expense category, amount, and due date, then
+inserts the expense into the database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.add_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">add_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.add_income" title="Link to this definition"></a></dt>
+<dd><p>Prompts the user for an income category, amount, and pay date, then
+inserts the income into the database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.budget_menu">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">budget_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.budget_menu" title="Link to this definition"></a></dt>
+<dd><p>Displays the budget-related submenu, allowing the user to set or view
+the budget for a specific category. It provides options to set a new
+budget or view an existing budget for a particular category.</p>
+<dl class="simple">
+<dt><strong>Flow</strong>:</dt><dd><p>The function enters an infinite loop, displaying the budget submenu
+until the user selects the option to return to the main menu. Based
+on the user’s input, the corresponding function is executed. If the
+user enters an invalid option, they are prompted to try again.</p>
+</dd>
+<dt><strong>Returns</strong>:</dt><dd><p>None: The function does not return any values. It performs actions
+based on the user’s choice, such as setting or viewing a budget.</p>
+</dd>
+<dt><strong>Exceptions</strong>:</dt><dd><ul class="simple">
+<li><p>No explicit exceptions are raised in this function, but the functions
+called within this menu (e.g., <cite>set_budget()</cite>, <cite>view_budget()</cite>)
+may raise exceptions that should be handled in those respective
+functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.budget_summary">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">budget_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.budget_summary" title="Link to this definition"></a></dt>
+<dd><p>Provide a detailed summary of current budget, including income, expenses,
+and budget analysis. This function retrieves and calculates total income,
+total expenses, and the total budgeted amounts. It then compares the actual
+expenses for each category to the set budget and provides a status report
+of whether each category is over budget or has no budget set. Additionally,
+it tracks the progress towards financial goals, indicating whether
+any goals have been achieved.</p>
+<p>The summary includes the following:
+- Total income for the user
+- Total expenses for the user
+- Total budgeted amount across all categories
+- Comparison of actual spending versus budgeted amounts by category
+- The remaining balance (income minus expenses)
+- The overall budget status (within budget or over budget)
+- A breakdown of over-budget categories, if applicable
+- A list of categories that do not have a budget set
+- The status of financial goals (achieved or in progress)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – This function raises an exception if there are any
+errors related to the database connection,
+query execution, or data fetching. Examples of such
+errors include issues with connecting to the database
+or malformed queries.</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function assumes that the income, expenses, budgets, and
+financial goals tables exist in the database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.commit_and_close">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">commit_and_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.commit_and_close" title="Link to this definition"></a></dt>
+<dd><p>Commits any changes and closes the database connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection</strong> (<em>sqlite3.Connection</em>) – The database connection to commit and close.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.create_connection">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">create_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.create_connection" title="Link to this definition"></a></dt>
+<dd><p>Creates a connection to the SQLite database and returns the connection
+and cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – The name of the SQLite database.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the database connection and cursor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.create_database">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">create_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.create_database" title="Link to this definition"></a></dt>
+<dd><p>Initializes the SQLite database and creates necessary tables.</p>
+<p>This function creates the tables for expenses, income, budgets, and
+financial goals. It also pre-populates the tables with example data
+if the database is being created for the first time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.delete_expense">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">delete_expense</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.delete_expense" title="Link to this definition"></a></dt>
+<dd><p>Deletes an expense and corresponding budget by category from the database.</p>
+<p>The function prompts the user for a category, then deletes the expense
+from the expenses table and the corresponding budget from budgets table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error during the database operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.delete_financial_goal">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">delete_financial_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.delete_financial_goal" title="Link to this definition"></a></dt>
+<dd><p>Delete a financial goal by its goal name.</p>
+<p>This function prompts the user to select a financial goal to delete.
+It then removes the corresponding goal from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error with the database connection or
+deletion of the financial goal.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.delete_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">delete_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.delete_income" title="Link to this definition"></a></dt>
+<dd><p>Deletes an income record by category.</p>
+<p>This function prompts the user to select an income category and then
+removes the corresponding income record from the SQLite database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to database, deleting
+the income record, or validating the category input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.expense_menu">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">expense_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.expense_menu" title="Link to this definition"></a></dt>
+<dd><p>Displays the expense-related submenu, allowing the user to perform
+various operations related to expenses. It provides a menu of options
+for the user to choose from, and executes corresponding functions
+based on the user’s input.</p>
+<dl class="simple">
+<dt><strong>Flow</strong>:</dt><dd><p>The function enters an infinite loop, presenting the expense submenu
+until the user selects the option to return to the main menu.
+Based on the user’s choice, the corresponding function is executed.
+If the user enters an invalid option, they are prompted to try again.</p>
+</dd>
+<dt><strong>Returns</strong>:</dt><dd><p>None: The function does not return any values. It performs actions
+based on user input, such as adding, viewing, updating, or deleting
+expenses.</p>
+</dd>
+<dt><strong>Exceptions</strong>:</dt><dd><ul class="simple">
+<li><p>No explicit exceptions are raised in this function, but the functions
+called within this menu (e.g., <cite>add_expense()</cite>, <cite>view_expenses()</cite>)
+may raise exceptions that should be handled in those respective
+functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.financial_goals_menu">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">financial_goals_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.financial_goals_menu" title="Link to this definition"></a></dt>
+<dd><p>Displays the financial goals-related submenu, allowing the user to set,
+view, update, or delete financial goals. It provides options to manage
+financial goals and track progress towards achieving them.</p>
+<dl class="simple">
+<dt><strong>Flow</strong>:</dt><dd><p>The function enters an infinite loop, displaying the financial goals
+submenu until the user selects the option to return to the main menu.
+Based on the user’s input, the corresponding function is executed.
+If the user enters an invalid option, they are prompted to try again.</p>
+</dd>
+<dt><strong>Returns</strong>:</dt><dd><p>None: The function does not return any values. It performs actions
+based on the user’s choice, such as setting, viewing, updating, or
+deleting financial goals.</p>
+</dd>
+<dt><strong>Exceptions</strong>:</dt><dd><ul class="simple">
+<li><p>No explicit exceptions are raised in this function, but the functions
+called within this menu (e.g., <cite>set_financial_goal()</cite>,
+<cite>view_financial_goals()</cite>) may raise exceptions that should be handled
+in those respective functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.get_amount">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">get_amount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.get_amount" title="Link to this definition"></a></dt>
+<dd><p>Prompts the user for a valid float input and ensures input is non-empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<em>str</em>) – The message to display when asking for input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user’s input as a float.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.get_category">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">get_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.get_category" title="Link to this definition"></a></dt>
+<dd><p>Prompts the user to input a valid expense category.</p>
+<p>The input must be non-empty and cannot contain numbers. It is
+capitalized before being returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<em>str</em>) – The message displayed to the user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid, capitalized category name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the input is empty or contains numbers.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The function keeps prompting the user until valid input is provided.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.get_date">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">get_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.get_date" title="Link to this definition"></a></dt>
+<dd><p>Prompts the user for a date input in format YYYY-MM-DD and validates it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<em>str</em>) – The message to display when asking for input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid date object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>datetime.date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.get_financial_goal">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">get_financial_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.get_financial_goal" title="Link to this definition"></a></dt>
+<dd><p>Prompts user for a valid financial goal input and ensures it is non-empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<em>str</em>) – The message to display when asking for input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The valid financial goal input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.income_menu">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">income_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.income_menu" title="Link to this definition"></a></dt>
+<dd><p>Displays the income-related submenu, allowing the user to perform various
+operations related to income. It presents a menu of options and executes
+the corresponding function based on the user’s input.</p>
+<dl class="simple">
+<dt><strong>Flow</strong>:</dt><dd><p>The function enters an infinite loop, displaying the income submenu
+until the user selects the option to return to the main menu. Based
+on the user’s choice, the corresponding function is executed. If the
+user enters an invalid option, they are prompted to try again.</p>
+</dd>
+<dt><strong>Returns</strong>:</dt><dd><p>None: The function does not return any values. It performs actions
+based on user input, such as adding, viewing, updating, or deleting
+income.</p>
+</dd>
+<dt><strong>Exceptions</strong>:</dt><dd><ul class="simple">
+<li><p>No explicit exceptions are raised in this function, but the functions
+called within this menu (e.g., <cite>add_income()</cite>, <cite>view_income()</cite>)
+may raise exceptions that should be handled in those respective
+functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.insert_expense">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">insert_expense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expense_category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expense_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expense_due_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.insert_expense" title="Link to this definition"></a></dt>
+<dd><p>Inserts an expense with a category, amount, and due date into the SQLite
+database if the category does not already exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expense_category</strong> (<em>str</em>) – The category of the expense.</p></li>
+<li><p><strong>expense_amount</strong> (<em>float</em>) – The amount of the expense.</p></li>
+<li><p><strong>expense_due_date</strong> (<em>datetime.date</em>) – The due date of the expense.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If there is an error during the database operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.insert_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">insert_income</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">income_category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">income_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">income_pay_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.insert_income" title="Link to this definition"></a></dt>
+<dd><p>Inserts an income with a category, amount, and pay date into the SQLite
+database if the category does not already exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>income_category</strong> (<em>str</em>) – The category of the income.</p></li>
+<li><p><strong>income_amount</strong> (<em>float</em>) – The amount of the income.</p></li>
+<li><p><strong>income_pay_date</strong> (<em>datetime.date</em>) – The pay date of the income.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If there is an error during the database operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.main_menu">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">main_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.main_menu" title="Link to this definition"></a></dt>
+<dd><p>Displays the main menu of the Expense and Budget Tracker application and
+handles user choices by directing them to different submenus or actions
+related to managing expenses, income, budgets, financial goals, and
+summaries.</p>
+<p>The available menu options are:
+1. Expense Options (Leads to the expense-related submenu)
+2. Income Options (Leads to the income-related submenu)
+3. Budget Options (Leads to the budget-related submenu)
+4. Financial Goals Options (Leads to the financial goals-related submenu)
+5. Budget Summary (Displays an overview of budget-related information)
+6. Quit (Exits the program)</p>
+<dl class="simple">
+<dt><strong>Flow</strong>:</dt><dd><p>The function first initializes the database using <cite>create_database()</cite>.
+Then, it enters an infinite loop that displays the main menu options.
+The user is prompted to choose an option by entering the corresponding
+number. Based on the user’s choice, the appropriate function is called
+to manage expenses, income, budgets, financial goals, or view a
+summary. If the user chooses to quit, the program exits.</p>
+</dd>
+<dt><strong>Returns</strong>:</dt><dd><p>None: The function does not return any values. It manages user
+navigation through the menu system and triggers the appropriate actions
+based on user input.</p>
+</dd>
+<dt><strong>Exceptions</strong>:</dt><dd><ul class="simple">
+<li><p>No explicit exceptions are raised in this function, but the functions
+called within the menu (e.g., <cite>expense_menu()</cite>,
+<cite>income_menu()</cite>, etc.) may raise exceptions that should be handled in
+those respective functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.set_budget">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">set_budget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.set_budget" title="Link to this definition"></a></dt>
+<dd><p>Sets or updates the budget for a specific category.</p>
+<p>This function prompts the user to choose a category and then sets or
+updates the budget amount for that category in the database. If a budget
+already exists for the category, it is replaced with the new budget amount.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database or
+updating the budget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.set_financial_goal">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">set_financial_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.set_financial_goal" title="Link to this definition"></a></dt>
+<dd><p>Set a financial goal, including the target and saved amounts.</p>
+<p>This function prompts the user to enter a financial goal, a target amount,
+and the amount saved so far. The information is then saved into database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database or
+inserting the financial goal.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.total_expenses">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">total_expenses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.total_expenses" title="Link to this definition"></a></dt>
+<dd><p>Calculates and displays the total amount of all expenses.</p>
+<p>This function retrieves the sum of all expense amounts from the database
+and displays the total.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error during the database operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.total_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">total_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.total_income" title="Link to this definition"></a></dt>
+<dd><p>Calculates and displays the total income from the database.</p>
+<p>This function queries the database to sum all income amounts and displays
+the total. If no income records exist, it will display a total of 0.0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database or
+fetching the income data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.update_expense">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">update_expense</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.update_expense" title="Link to this definition"></a></dt>
+<dd><p>Updates the expense amount for a specified category in the database.</p>
+<p>This function prompts the user to select a category and enter a new
+expense amount. The specified category’s expense is updated in the
+database with the new amount.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error during the database operation.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>expense_category</cite> (str): The category of the expense to update.</p></li>
+<li><p><cite>new_amount</cite> (float): The new expense amount.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.update_financial_goal">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">update_financial_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.update_financial_goal" title="Link to this definition"></a></dt>
+<dd><p>Update the saved amount for a specific financial goal.</p>
+<p>This function allows the user to update the amount saved for a given
+financial goal. It first fetches the current saved amount, prompts the
+user for the new amount, and updates the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error with the database connection,
+fetching the current saved amount, or updating the
+saved amount.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><dl class="simple">
+<dt><cite>financial_goal</cite> (str): The financial_goal of the financial_goals to</dt><dd><p>update.</p>
+</dd>
+</dl>
+</li>
+<li><p><cite>new_saved_amount</cite> (float): The new financial goal saved amount.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.update_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">update_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.update_income" title="Link to this definition"></a></dt>
+<dd><p>Updates the income amount for a specified category.</p>
+<p>This function prompts the user to select an income category and enter a
+new income amount. The income record for the selected category is then
+updated with the new amount in the SQLite database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to database, updating
+the income record, or validating the category input.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>income_category</cite> (str): The category of the income to update.</p></li>
+<li><p><cite>new_amount</cite> (float): The new income amount.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.validate_category_input">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">validate_category_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.validate_category_input" title="Link to this definition"></a></dt>
+<dd><p>Validates user input for category by comparing it with existing categories.</p>
+<p>This function fetches distinct categories from the specified table and
+prompts the user to select a valid category from the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – The name of the table to fetch categories from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The valid category chosen by the user.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.validate_financial_goal_input">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">validate_financial_goal_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.validate_financial_goal_input" title="Link to this definition"></a></dt>
+<dd><p>Validates input for a financial goal by comparing it with existing goals.</p>
+<p>This function fetches distinct financial goals from the specified table and
+prompts the user to select a valid goal from the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – The name of the table to fetch goals from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The valid financial goal chosen by the user.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_budget">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_budget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_budget" title="Link to this definition"></a></dt>
+<dd><p>Displays the budget for a specific category.</p>
+<p>This function prompts the user to choose a category and then retrieves
+and displays the associated budget from the database. If no budget exists
+for the specified category, it informs the user that no budget is found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database or
+retrieving the budget.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>budget_category</cite> (str): The category of budgets to retrieve.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_expenses">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_expenses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_expenses" title="Link to this definition"></a></dt>
+<dd><p>Retrieves and displays all expenses stored in the SQLite database.</p>
+<p>This function fetches and prints all expenses in the database, including
+their ID, category, amount, and due date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error during database operations.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_expenses_by_category">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_expenses_by_category</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_expenses_by_category" title="Link to this definition"></a></dt>
+<dd><p>Retrieves and displays expense records filtered by a specified category.</p>
+<p>This function prompts the user to select a category from the available
+expense categories, and then fetches and displays all expense entries in
+that category. The details displayed include the ID, amount, and due date
+for each expense record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database,
+validating the category, or retrieving the filtered
+income data.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>income_category</cite> (str): The category of income to retrieve.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_financial_goals">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_financial_goals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_financial_goals" title="Link to this definition"></a></dt>
+<dd><p>View progress towards financial goals.</p>
+<p>This function retrieves all financial goals from the database and displays
+each goal’s name, target amount, and saved amount, allowing the user to
+track their progress.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error with the database connection or
+fetching the financial goals.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_income">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_income" title="Link to this definition"></a></dt>
+<dd><p>Retrieves and displays all incomes stored in the SQLite database.</p>
+<p>This function fetches and prints all income in the database, including
+their ID, category, amount, and pay date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error during database operations.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="budget_tracker_app.view_income_by_category">
+<span class="sig-prename descclassname"><span class="pre">budget_tracker_app.</span></span><span class="sig-name descname"><span class="pre">view_income_by_category</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#budget_tracker_app.view_income_by_category" title="Link to this definition"></a></dt>
+<dd><p>Retrieves and displays income records filtered by a specified category.</p>
+<p>This function prompts the user to select a category from the available
+income categories, and then fetches and displays all income entries in that
+category. The details displayed include the ID, amount, and pay date for
+each income record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there is an error connecting to the database,
+validating the category, or retrieving the filtered
+income data.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><cite>income_category</cite> (str): The category of income to retrieve.</p></li>
+<li><p><cite>connection</cite> (sqlite3.Connection): The database connection object.</p></li>
+<li><p><cite>cursor</cite> (sqlite3.Cursor): The database cursor object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Budget Tracker App documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="budget_tracker_project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mohammed Wajaahath.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
